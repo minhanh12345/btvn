@@ -9,9 +9,9 @@ public class ProductService {
     public static ArrayList<Product> listProduct = new ArrayList<>();
 
     static {
-        listProduct.add(new Product("BMV", 100, 10, "blue", "abc"));
-        listProduct.add(new Product("Toyota", 200, 10, "black", "abc"));
-        listProduct.add(new Product("Lexus", 300, 20, "white", "abc"));
+        listProduct.add(new Product("BMV", 100, 10, "blue", 1));
+        listProduct.add(new Product("Toyota", 200, 10, "black", 2));
+        listProduct.add(new Product("Lexus", 300, 20, "white", 3));
     }
 
     public static void create(Product product) {

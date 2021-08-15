@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+
+
+    <h2>Show Customer</h2>
+    <a href="/create" class="btn btn-success">Create</a>
+    <form action="/find" method="post">
+        <input type="text" placeholder="Find" name="nameFind">
+        <button type="submit">go</button>
+    </form>
+    <br>
+    <br>
+    <table class="table" th:each="c ,loop : ${list}">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Number</th>
+            <th>Color</th>
+            <th>Type</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        </thead>
+        <tbody>
+
+            <tr>
+
+                <td th:text="${c.getName()}"></td>
+                <td th:text="${c.getPrice()}"></td>
+                <td th:text="${c.getNumber()}"></td>
+                <td th:text="${c.getColor()}"></td>
+                <td th:if="${c.getType()}==1" th:text="Sedan"></td>
+                <td th:if="${c.getType()}==2" th:text="SUV"></td>
+                <td th:if="${c.getType()}==3" th:text="PickUp"></td>
+                <td><a th:href="@{/edit(index=${loop.index})}" class="btn btn-warning">Edit</a></td>
+                <td><a th:href="@{/delete(index=${loop.index})}" class="btn btn-danger">Delete</a></td>
+            </tr>
+
+
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>

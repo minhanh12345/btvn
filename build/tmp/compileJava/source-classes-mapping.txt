@@ -2,9 +2,11 @@ Config/ApplicationInitializer.java
  Config.ApplicationInitializer
 Config/AppConfig.java
  Config.AppConfig
+controllers/HomeController.java
+ controllers.HomeController
 models/Product.java
  models.Product
 service/ProductService.java
  service.ProductService
-controllers/HomeController.java
- controllers.HomeController
+models/TypeProduct.java
+ models.TypeProduct

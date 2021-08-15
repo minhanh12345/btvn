@@ -5,15 +5,15 @@ public class Product {
     private int price;
     private int number;
     private String color;
-    private String description;
+    private int type;
     private Product(){}
 
-    public Product(String name, int price, int number, String color, String description) {
+    public Product(String name, int price, int number, String color, int type) {
         this.name = name;
         this.price = price;
         this.number = number;
         this.color = color;
-        this.description = description;
+        this.type = type;
 
     }
 
@@ -49,12 +49,12 @@ public class Product {
         this.color = color;
     }
 
-    public String getDescription() {
-        return description;
+    public int getType() {
+        return type;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setType(int description) {
+        this.type = description;
     }
 
 
